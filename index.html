@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>CRM Dashboard</h1>
+
+<!-- Add/Edit Lead -->
+<h2>Add / Edit Lead</h2>
+<input type="hidden" id="editId">
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="company" placeholder="Company">
+
+<select id="priority">
+  <option>High</option>
+  <option selected>Medium</option>
+  <option>Low</option>
+</select>
+
+<input type="date" id="reminder">
+
+<button onclick="addOrUpdateLead()">Save Lead</button>
+
+<!-- Search / Filter -->
+<h2>Search / Filter</h2>
+<input type="text" id="search" placeholder="Search by name or company" oninput="renderLeads()">
+
+<select id="filterStatus" onchange="renderLeads()">
+  <option value="all">All</option>
+  <option value="new">New</option>
+  <option value="contacted">Contacted</option>
+  <option value="qualified">Qualified</option>
+  <option value="converted">Converted</option>
+</select>
+
+<!-- Pipeline -->
+<h2>Pipeline</h2>
+<div id="pipeline">
+  <div class="column" id="new" ondrop="drop(event)" ondragover="allowDrop(event)"><h3>New</h3></div>
+  <div class="column" id="contacted" ondrop="drop(event)" ondragover="allowDrop(event)"><h3>Contacted</h3></div>
+  <div class="column" id="qualified" ondrop="drop(event)" ondragover="allowDrop(event)"><h3>Qualified</h3></div>
+  <div class="column" id="converted" ondrop="drop(event)" ondragover="allowDrop(event)"><h3>Converted</h3></div>
+</div>
+
+<!-- Dashboard -->
+<h2>Dashboard</h2>
+<div class="dashboard">
+  <div>Total Leads: <span id="totalLeads">0</span></div>
+  <div>Converted Leads: <span id="convertedLeads">0</span></div>
+  <div>Conversion Rate: <span id="conversionRate">0%</span></div>
+</div>
+
+<!-- Chart -->
+<h2>Analytics Chart</h2>
+<canvas id="chart" height="100"></canvas>
+
+<!-- Customers -->
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
