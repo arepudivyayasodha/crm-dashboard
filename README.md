@@ -49,10 +49,10 @@ crm-dashboard/
 ## Screenshots
 
 ### CRM Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Dashboard.png)
 
 ### Lead Pipeline Management
-![Pipeline](screenshots/pipeline.png)
+![Pipeline](pipeline.png)
 
 ---
 
